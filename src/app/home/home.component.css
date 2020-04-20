@@ -1,5 +1,20 @@
 .searchContainer{
-    border: solid salmon 2px;
+    border: solid salmon 5px;
     height: 350px;
     width: 100%;
+}
+
+#readmore{
+    color:blue;
+}
+#slogan{
+    color:lightcoral ;
+}
+
+#headlines{
+    color:lightcoral
+}
+
+#loader{
+    color:lightcoral ;
 }

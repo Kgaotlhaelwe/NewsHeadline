@@ -1,16 +1,16 @@
 <!-- <app-navbar></app-navbar> -->
 
 <div class="container  mt-2">
-    <h1 class="text-center pt-5">STAY CURRENT , BE ON THE LOOP</h1>
+    <h1 class="text-center pt-5" id="slogan">STAY CURRENT , BE ON THE LOOP</h1>
     <div class="searchContainer mt-3">
         <h3 class="text-center pt-5">SEARCH THE BEST STORIES</h3>
-        <div class="row ml-3">
+        <div class="row d-flex justify-content-center ml-2 mr-2">
             <div class="col-lg-4 col-sm-12">
-                <input class="form-control mt-3" type="text" placeholder="Search" aria-label="Search" #keyword>
+                <input class="form-control mt-3" type="text" placeholder="Search" aria-label="Search" #keyword id="phrase">
             </div>
 
             <div class=" col-lg-4 col-sm-12">
-                <input class="form-control mt-3" type="date" max={{datez}} #date>
+                <input class="form-control mt-3" type="date" max={{datez}} #date  id="date">
             </div>
 
             <div class="col-lg-2 col-sm-12">
@@ -21,15 +21,18 @@
     </div>
     <div *ngIf="articles.length == 0; then thenBlock else elseBlock"></div>
     <ng-template #thenBlock>
-        <h1 class="text-center pt-5" *ngIf="showStories">LOADING STORIES ....</h1>
+        <h1 class="text-center pt-5" id="loader" *ngIf="showStories">LOADING STORIES ....</h1>
     </ng-template>
 
+    
+
     <ng-template #elseBlock>
-        <h2 class="pt-4 pr-3">Latest News</h2>
+        <h2 class="pt-4 pl-5"  id="headlines"> News Headlines</h2>
+        
         <div class="row ml-5">
 
             <div *ngFor="let article of articles">
-                <div class="col-lg-4 col-md-2 mt-2">
+                <div class="col-lg-4 col-md-2 mt-3">
                     <div class="card" style="width: 18rem; height:500px;">
 
                         <img src={{article.urlToImage}} class="card-img-top" alt="..."
@@ -41,8 +44,9 @@
 
                             <h5 class="card-title">{{article.title}}</h5>
                             <p class="card-text">{{article.description.substring(0, 150)}}</p>
-                            <a  class="card-link d-flex justify-content-end" (click)="readMore(article)"
+                            <a  class=" btn d-flex justify-content-end" id="readmore"(click)="readMore(article)"
                                >Read more</a>
+                               
                         </div>
                     </div>
 
